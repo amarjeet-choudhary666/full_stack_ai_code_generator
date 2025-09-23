@@ -1,0 +1,400 @@
+/* Dark Theme AI Code Generator */
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+}
+
+/* ChatGPT-like Container */
+.chat-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.chat-container:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Form Styling */
+.form-input {
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-input::placeholder {
+  color: #6b7280;
+}
+
+.form-textarea {
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.form-select {
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+/* Labels */
+.form-label {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--text-accent) 0%, #0099cc 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+/* Code Display */
+.code-container {
+  background: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.code-header {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: between;
+  align-items: center;
+}
+
+.code-content {
+  padding: 20px;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e6fffa;
+}
+
+.code-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Language Badge */
+.language-badge {
+  background: linear-gradient(135deg, var(--text-accent), #0099cc);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Copy Button */
+.copy-btn {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+/* Loading Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-top: 2px solid var(--text-accent);
+  border-radius: 50%;
+}
+
+/* Error/Success Messages */
+.alert-error {
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.alert-success {
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chat-container {
+    margin: 16px;
+    border-radius: 12px;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 16px;
+  }
+  
+  .form-textarea {
+    min-height: 100px;
+  }
+}
+
+/* Enhanced Syntax Highlighting for Code */
+.code-content {
+  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e6fffa;
+  background: var(--code-bg);
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.code-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+}
+
+.code-content code {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* VS Code Dark Theme Colors */
+
+/* Comments - Bright Green (more visible) */
+.highlight-comment {
+  color: #6A9955 !important;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Keywords - Bright Blue */
+.highlight-keyword {
+  color: #569CD6 !important;
+  font-weight: 600;
+}
+
+/* Strings - Orange/Peach */
+.highlight-string {
+  color: #CE9178 !important;
+}
+
+/* Numbers - Light Green */
+.highlight-number {
+  color: #B5CEA8 !important;
+}
+
+/* Functions - Yellow */
+.highlight-function {
+  color: #DCDCAA !important;
+  font-weight: 500;
+}
+
+/* Variables - Light Blue */
+.highlight-variable {
+  color: #9CDCFE !important;
+}
+
+/* Operators - White */
+.highlight-operator {
+  color: #D4D4D4 !important;
+}
+
+/* Punctuation - Light Gray */
+.highlight-punctuation {
+  color: #CCCCCC !important;
+}
+
+/* Classes - Teal */
+.highlight-class {
+  color: #4EC9B0 !important;
+  font-weight: 500;
+}
+
+/* Types - Cyan */
+.highlight-type {
+  color: #4FC1FF !important;
+}
+
+/* Properties - Light Blue */
+.highlight-property {
+  color: #9CDCFE !important;
+}
+
+/* Constants - Purple */
+.highlight-constant {
+  color: #D19A66 !important;
+  font-weight: 500;
+}
+
+/* Annotations/Decorators - Yellow */
+.highlight-annotation {
+  color: #DCDCAA !important;
+}
+
+/* Regex - Red */
+.highlight-regex {
+  color: #D16969 !important;
+}
+
+/* Escape sequences - Yellow */
+.highlight-escape {
+  color: #D7BA7D !important;
+}
+
+/* Line numbers (if needed) */
+.code-line-numbers {
+  color: #858585;
+  user-select: none;
+  margin-right: 16px;
+  text-align: right;
+  min-width: 30px;
+  display: inline-block;
+}
+
+/* Highlight current line */
+.code-line-highlight {
+  background-color: rgba(255, 255, 255, 0.05);
+  display: block;
+  margin: 0 -20px;
+  padding: 0 20px;
+}
+
+/* Selection in code */
+.code-content ::selection {
+  background-color: rgba(173, 214, 255, 0.3);
+}
+
+/* Scrollbar for code */
+.code-content::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.code-content::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.code-content::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.code-content::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-bg);
+}
