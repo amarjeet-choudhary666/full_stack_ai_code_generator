@@ -46,7 +46,7 @@ A modern, full-stack web application that generates clean, commented code using 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ai-code-generator.git
+   git clone https://github.com/amarjeet-choudhary666/full_stack_ai_code_generator.git
    cd ai-code-generator
    ```
 
@@ -265,14 +265,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **MongoDB** for flexible database solutions
 - **Vite** for lightning-fast development
 
-## 📞 Support
 
-If you have any questions or need help:
-
-1. Check the [Issues](https://github.com/yourusername/ai-code-generator/issues) page
-2. Create a new issue with detailed information
-3. Join our community discussions
-
----
 
 *Generate code smarter, not harder* 🚀
